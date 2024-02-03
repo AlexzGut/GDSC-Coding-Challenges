@@ -20,17 +20,12 @@ class ValidParenthesesString {
         StringBuilder tempStr = new StringBuilder();
 
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(' || str.charAt(i) == '[' || str.charAt(i) == '{' ) {
+            if ( tempStr.length() > 0 && (str.charAt(i) == ')' && tempStr.charAt(tempStr.length() - 1) == '(') ||
+                    (str.charAt(i) == ']' && tempStr.charAt(tempStr.length() - 1) == '[') ||
+                    (str.charAt(i) == '}' && tempStr.charAt(tempStr.length() - 1) == '{') ) {
+                tempStr.deleteCharAt(tempStr.length() - 1);
+            } else {
                 tempStr.append(str.charAt(i));
-            }
-
-            else {
-                if ( (str.charAt(i) == ')' && tempStr.charAt(tempStr.length() - 1) == '(') ||
-                        (str.charAt(i) == ']' && tempStr.charAt(tempStr.length() - 1) == '[') ||
-                        (str.charAt(i) == '}' && tempStr.charAt(tempStr.length() - 1) == '{') ) {
-                    tempStr.deleteCharAt(tempStr.length() - 1);
-                }
-                else break;
             }
         }
 
