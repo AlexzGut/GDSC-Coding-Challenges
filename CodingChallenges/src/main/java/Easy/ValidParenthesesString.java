@@ -25,7 +25,9 @@ class ValidParenthesesString {
             }
 
             else {
-                if ( (str.charAt(i) == ')' && tempStr.charAt(tempStr.length() - 1) == '(') || (str.charAt(i) == ']' && tempStr.charAt(tempStr.length() - 1) == '[') || (str.charAt(i) == '}' && tempStr.charAt(tempStr.length() - 1) == '{') ) {
+                if ( (str.charAt(i) == ')' && tempStr.charAt(tempStr.length() - 1) == '(') ||
+                        (str.charAt(i) == ']' && tempStr.charAt(tempStr.length() - 1) == '[') ||
+                        (str.charAt(i) == '}' && tempStr.charAt(tempStr.length() - 1) == '{') ) {
                     tempStr.deleteCharAt(tempStr.length() - 1);
                 }
                 else break;
